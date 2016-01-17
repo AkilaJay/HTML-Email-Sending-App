@@ -1,0 +1,52 @@
+<template name="send">
+
+    {{#if currentUser}} {{>navbarlog}}
+    <br/> {{#if contactsend}} {{#each contactss}}
+    <div class="contact">
+        <p class="litest">{{title}}</p>
+        <form accept-charset="UTF-8" role="form" id="send">
+            <fieldset>
+
+                <input type="submit" class="btn btn-lg btn-success btn-block floatbutton" id="editList" value="Send">
+            </fieldset>
+        </form>
+
+
+    </div>
+    {{/each}} {{else}}
+
+
+    <div class="row vertical-offset-100">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+
+
+                <form accept-charset="UTF-8" role="form" id="sendema">
+                    <fieldset>
+
+                        <div class="form-group">
+                            <label class="control-label">Send From:</label>
+                            <input type="text" class="form-control" id="from" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Send To:</label>
+                            <input type="text" placeholder="{{sendcon}}" class="form-control" id="to" value="{{sendcon}}">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Subject:</label>
+                            <input type="text" class="form-control" id="subject" value="">
+                        </div>
+
+                        <textarea class="form-control" rows="10" value="" id="htmldata"></textarea>
+
+                        <input type="submit" class="btn btn-lg btn-success btn-block floatbutton" value="Send">
+
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    {{/if}} {{else}} {{>login}} {{/if}}
+</template>

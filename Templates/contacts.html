@@ -1,0 +1,107 @@
+<template name = "contacts">
+<head>
+<link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+</head>
+<div class = "backg">
+{{#if currentUser}}
+{{>navbarlog}}
+{{#if Addname}}
+ <div class = "addnewcon"><input type="button" class="btn btn-lg btn-success btn-block addcontactbutt" id = "editName" value="Add New Contact List"></div>
+
+{{else}}
+
+{{/if}}
+
+
+{{#if Addcontactt}}
+
+{{#each contactss}}
+<div class = "contact">
+<p class = "litest">{{title}}</p>
+<form accept-charset="UTF-8" role="form" id = "editemaillist">
+   <fieldset>
+<input type="hidden" name="list" value="this.emails" id = "emailss">
+			    		
+<input type="submit" class="btn btn-lg btn-success btn-block floatbutton" id = "editList" value="Edit">
+</fieldset>
+</form>
+			    		
+			    	
+</div>
+{{/each}} 
+{{else}}
+{{/if}}
+
+{{#if addcontact}}
+
+{{#if editcontact}}
+<div class="fileupload fileupload-new" data-provides="fileupload">
+ 
+  <div>
+    <span class="btn btn-file"><span class="fileupload-new">Select image</span><input type="file" class = "file fileInput" id = "fileup" /></span>
+    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+  </div>
+</div>
+
+<form accept-charset="UTF-8" role="form" id = "contactedit">
+                    <fieldset>
+                    	
+                    	
+			    	  	<div class="form-group">
+			    		    <input class="form-control" id = "name" placeholder="name" name="name" type="text" required>
+			    		</div>
+			    		
+			    		<textarea class="form-control" rows="10" value = "{{importcontact1}}" id = "texta"></textarea>
+
+			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Update">
+
+
+			    		
+			    	</fieldset>
+			      	</form>
+{{else}}
+<div class="fileupload fileupload-new" data-provides="fileupload">
+ 
+  <div>
+    <span class="btn btn-file"><span class="fileupload-new">Select image</span><input type="file" class = "file fileInput" id = "fileup" /></span>
+    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+  </div>
+</div>
+
+<form accept-charset="UTF-8" role="form" id = "contactcreate">
+                    <fieldset>
+                    	
+                    	
+			    	  	<div class="form-group">
+			    		    <input class="form-control" id = "name" placeholder="name" name="name" type="text" required>
+			    		</div>
+			    		
+			    		
+
+			    		<textarea class="form-control" rows="10" value = "{{importcontact}}" id = "texta" required></textarea>
+			    		<br>
+			    		<textarea class="form-control" rows="10" value = "{{importfirstnames}}" id = "firstn"></textarea>
+			    		<br>
+			    		<textarea class="form-control" rows="10" value = "{{importlastnames}}" id = "lastn"></textarea>
+
+
+			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Add Contact List">
+
+
+			    		
+			    	</fieldset>
+			      	</form>
+{{/if}}
+{{else}}
+
+{{/if}}
+
+{{else}}
+
+{{/if}}
+
+</div>
+
+
+
+</template>
